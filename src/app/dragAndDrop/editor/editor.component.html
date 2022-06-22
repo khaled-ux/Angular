@@ -1,0 +1,181 @@
+<div>
+    <div #formData class="col-sm-2">
+        <ul class="sortable-stdFields">
+            <div [draggable] *ngFor="let item of vegetables " [dragClass]=" 'active' " [dragData]="item" [dragScope]="item.type">
+                <li class="dragElement-wrapper">
+                    <div class="drag-element">
+                        <i *ngIf="item.inputType==='text' " class="material-icons">text_fields</i>
+                        <i *ngIf="item.inputType==='date' " class="material-icons">date_range</i>
+                        <i *ngIf="item.inputType==='file' " class="material-icons">wallpaper</i>
+                        <i *ngIf="item.inputType==='textarea' " class="material-icons">message</i>
+                        <i *ngIf="item.inputType==='iframe' " class="material-icons">room</i>
+                        <i *ngIf="item.inputType==='Produit' " class="material-icons">shopping_cart</i>
+                        <i *ngIf="item.inputType==='form' " class="material-icons">text_snippet</i>
+                        <i *ngIf="item.inputType==='editor' " class="material-icons">edit</i> {{item.name}}
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>
+<div style="height:687px;" droppable [dragOverClass]=" 'drag-target-border' " [dropScope]="[ 'label', 'input-text', 'date', 'file', 'textarea', 'iframe','Produit','form','editor'] " [dragHintClass]=" 'drag-hint' " (onDrop)="onAnyDrop($event) ">
+    <div class="scroll-list" id="formContent ">
+        <div class="row">
+
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event) ">
+
+                <div class="row sortable-formbuilder " *ngFor="let item of droppedItems" cdkDrag>
+                    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                    <div class="form-group">
+
+                        <!--  text -->
+                        <input class="form-control" [type]="item.inputType" [(ngModel)]="item.placeholder" name="placeholder" *ngIf="item.inputType !=='label' && item.inputType !=='textarea' && item.inputType !=='iframe' && item.inputType !=='Produit' && item.inputType !=='form' && item.inputType !=='editor'">
+
+
+
+
+                        <!--   Produit -->
+                        <div class="col-md-6 " *ngIf="item.inputType==='Produit' ">
+                            <div>
+                                <div class="img-box ">
+
+
+
+                                    <div class="detail-box">
+
+
+                                        <div class="form-group">
+                                            <table class="example-full-width" cellspacing="0">
+                                                <tr>
+                                                    <td>
+                                                        <img [src]="imageUrl" style="width: 250px; height:200px;">
+                                                        <input #Image type="file" (change)="handleFileInput($any($event).target.files)">
+                                                    </td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td>
+                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                            <mat-label>nom de produit</mat-label>
+                                                            <input matInput [(ngModel)]="item.nameProduit" name="nameProduit" type="text">
+                                                        </mat-form-field>
+                                                        <h2>{{item.nameProduit}}</h2>
+                                                    </td>
+                                                    <td>
+                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                            <mat-label>Prix</mat-label>
+                                                            <input matInput [(ngModel)]="item.prixProduit" name="prixProduit" type="text">
+                                                        </mat-form-field>
+                                                        <h2>{{item.prixProduit}} </h2>
+
+                                                    </td>
+                                                    <td>
+                                                        <button mat-stroked-button color="primary" class="btn-block" (click)="onUpload(Image)"> enregistrer Image</button>
+
+                                                    </td>
+
+                                                </tr>
+
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-control " *ngIf="item.displayText" placeholder="Pagaraph Text"></label>
+
+                        <!--  Pagaraph  -->
+                        <textarea [(ngModel)]="item.placeholder" name="placeholder" *ngIf="item.inputType==='textarea' " class="form-control " id="Pagaraph_Text17 " value=" " placeholder="Pagaraph Text " rows="4 "></textarea>
+
+                        <!--  Carte -->
+                        <div class="detail-box " *ngIf="item.inputType==='iframe' ">
+                            <div class="img-box ">
+                                <iframe class="form-control " allowtransparency="true " frameborder="0 " scrolling="no " style="width: 100%; height: 250px; margin-top: 10px; margin-bottom: 10px; " src="//www.weebly.com/weebly/apps/generateMap.php?map=google&amp;elementid=161117021954268281&amp;ineditor=1&amp;control=3&amp;width=auto&amp;height=250px&amp;overviewmap=0&amp;scalecontrol=0&amp;typecontrol=0&amp;zoom=15&amp;long=-122.418333&amp;lat=37.775&amp;domain=www&amp;point=1&amp;align=1&amp;reseller=false&amp;touch=0 "></iframe>
+                                <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+                                <div class="detail-box">
+                                    <h5>
+                                        <label class="form-control " *ngIf="item.displayText " placeholder="texte "></label>
+                                    </h5>
+
+                                    <div class="form-group">
+                                        <table class="example-full-width" cellspacing="0">
+                                            <tr>
+                                                <td>
+                                                    <mat-form-field class="example-full-width" appearance="fill">
+
+                                                        <input matInput [(ngModel)]="item.lat" name="lat" type="number">
+                                                    </mat-form-field>
+                                                    <h2>Lat</h2>
+                                                    <h2>{{item.lat}}</h2>
+                                                </td>
+                                                <td>
+                                                    <mat-form-field class="example-full-width" appearance="fill">
+
+                                                        <input matInput [(ngModel)]="item.lng" name="lng" type="number">
+                                                    </mat-form-field>
+                                                    <h2>Lng</h2>
+                                                    <h2>{{item.lng}}</h2>
+                                                </td>
+
+
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!--  Formulaire -->
+                        <div *ngIf="item.inputType==='form' " class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+                            <mat-card class="box">
+                                <form #f="ngForm" class="example-form">
+                                    <mat-card-content>
+                                        <mat-form-field class="example-full-width">
+                                            <input required minlength="6" matInput placeholder="Firstname " name="Firstname">
+
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input required minlength="6" matInput placeholder="Lastname" name="Lastname">
+
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input required minlength="6" matInput placeholder="Username" name="Username">
+
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input required Email minlength="6" matInput placeholder="Email" name="Email">
+
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input required minlength="6" matInput placeholder="Password" name="Password">
+
+                                        </mat-form-field>
+
+                                    </mat-card-content>
+                                    <button [disabled]="f.invalid" mat-stroked-button color="accent" class="btn-block">envoyer message</button>
+
+                                </form>
+                            </mat-card>
+                        </div>
+
+                        <!--  editor text -->
+
+                        <angular-editor [placeholder]="'Enter text here...'" *ngIf="item.inputType==='editor' " [(ngModel)]="item.htmlContent" name="htmlContent"></angular-editor>
+
+                        <span (click)="removeItem(item) "><i class="fa fa-lg fa-minus-square-o remove-ico "></i></span>
+                    </div>
+
+                </div>
+                <mat-card>
+                    <button mat-stroked-button color="accent" class="btn-block" (click)="CreateComponents()">cliquer pour enregistrer votre choix</button>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

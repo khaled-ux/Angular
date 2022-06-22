@@ -1,0 +1,160 @@
+<section id="home">
+    <div class="container">
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
+                        <h1>
+                            La liberté de créer un site web qui vous ressemble</h1>
+
+                        <div class="d-flex justify-content-center justify-content-lg-start">
+                            <a class="btn-get-started scrollto" routerLink="/stepper">
+                              
+                                
+                                Suivre les étapes suivantes </a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 order-1 order-lg-3 hero-img">
+                        <img src="assets/img/8.jpg" class="img-fluid animated">
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+        </section>
+        <section class="py-2">
+            <div class="row flex-center">
+                <section>
+                    <mat-stepper linear #stepper>
+                        <mat-step>
+                            <form #e="ngForm">
+                                <ng-template matStepLabel>Tapez les coordonnées de votre site web</ng-template>
+
+                                <div class="row">
+                                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+                                        <div class="icon-box">
+
+
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Nom </mat-label>
+                                                    <input [(ngModel)]="Nom" #a="ngModel" required name="Nom" matInput placeholder="Nom" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Email</mat-label>
+                                                    <input [(ngModel)]="Email" #b="ngModel" required name="Email" matInput placeholder="Email" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Adresse</mat-label>
+                                                    <input [(ngModel)]="Adresse" #c="ngModel" required name="Adresse" matInput placeholder="Adresse" required>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos-delay="200">
+                                        <div class="icon-box">
+
+
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Telephone</mat-label>
+                                                    <input [(ngModel)]="Telephone" #w="ngModel" required name="Telephone" matInput placeholder="Telephone" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Description de votre société</mat-label>
+                                                    <input [(ngModel)]="Description" #d="ngModel" required name="Description" matInput placeholder="Description" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label> dateOuverture</mat-label>
+                                                    <input [(ngModel)]="dateOuverture" #j="ngModel" required name="dateOuverture" matInput placeholder="dateOuverture" required>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos-delay="300">
+                                        <div class="icon-box">
+
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>lienFacebook</mat-label>
+                                                    <input [(ngModel)]="lienFacebook" #l="ngModel" required name="lienFacebook" matInput placeholder="lienFacebook" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>lienLinkedin</mat-label>
+                                                    <input [(ngModel)]="lienLinkedin" #m="ngModel" required name="lienLinkedin" matInput placeholder="lienLinkedin" required>
+                                                </mat-form-field>
+                                            </div>
+                                            <div>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>lienInstagram</mat-label>
+                                                    <input [(ngModel)]="lienInstagram" #n="ngModel" required name="lienInstagram" matInput placeholder="lienInstagram" required>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+
+                                <div>
+                                    <button [disabled]="e.invalid" mat-button matStepperNext>Suivant</button>
+                                </div>
+                            </form>
+                        </mat-step>
+
+                        <mat-step>
+                            <form #f="ngForm">
+                                <ng-template matStepLabel>Sélectionner un thème pour votre site</ng-template>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Theme</mat-label>
+                                    <mat-select [(ngModel)]="Theme" #i="ngModel" required name="theme" panelClass="example-panel-">
+                                        <mat-option value="Salle de Sort">Salle de Sort</mat-option>
+                                        <mat-option value="Restaurant">Restaurant</mat-option>
+                                        <mat-option value="boutique">boutique</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <div>
+                                    <button mat-button matStepperPrevious>Retour</button>
+                                    <button [disabled]="f.invalid" mat-button matStepperNext>Suivant</button>
+                                </div>
+                            </form>
+                        </mat-step>
+
+
+                        <mat-step>
+                            <ng-template matStepLabel>Valider</ng-template>
+                            <p>Vous avez maintenant terminé.</p>
+                            <div>
+                                <button mat-button matStepperPrevious>Retour</button>
+                                <button mat-button (click)="saveParametre(e,f)" routerLink="/editor">Valider</button>
+                                <button mat-button mat-button color="warn" (click)="resetForm(e,f)">Reset</button>
+                            </div>
+                        </mat-step>
+
+                    </mat-stepper>
+                </section>
+            </div>
+        </section>
+    </div>
+
+</section>

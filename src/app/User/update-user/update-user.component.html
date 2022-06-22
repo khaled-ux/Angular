@@ -1,0 +1,28 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Modifier les informations de User </mat-card-title>
+        </mat-card-header>
+        <form #f="ngForm" class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="id" #z="ngModel" required matInput placeholder="Id" name="Id">
+                    <div *ngIf="z.invalid && z.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="firstName" #in="ngModel" required matInput placeholder="FirstName" name="FirstName">
+                    <div *ngIf="in.invalid && in.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="lastName" #i="ngModel" required matInput placeholder="LastName" name="LastName">
+                    <div *ngIf="i.invalid && i.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="email" #a="ngModel" required matInput placeholder="Email" name="Email">
+                    <div *ngIf="a.invalid && a.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+            </mat-card-content>
+            <button [disabled]="f.invalid" mat-stroked-button color="accent" class="btn-block" (click)="Update(f)">Modifier</button>
+        </form>
+    </mat-card>
+</div>

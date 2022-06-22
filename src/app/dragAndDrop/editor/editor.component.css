@@ -1,0 +1,474 @@
+/* The Modal (background) */
+
+.modal {
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    padding-left: 0px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 50%;
+    /* Full width */
+    height: 50%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.tab-container {
+    border-bottom: 1px solid rgb(180, 21, 21);
+    padding-bottom: 10px;
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    padding-left: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffc100;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 1px;
+    background-color: white;
+    color: rgb(247, 243, 243);
+}
+
+.modal-body {
+    padding: 2px 1px;
+}
+
+.modal-footer {
+    padding: 2px 1px;
+    background-color: #fdfdfd;
+    color: white;
+}
+
+.example-box:active {
+    box-shadow: 0 5px 5px -3px rgba(124, 35, 35, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.example-boundary {
+    width: auto;
+    height: auto;
+    border: dotted #ccc 2px;
+}
+
+.card {
+    color: #76972a;
+}
+
+.example-list {
+    position: relative;
+    min-height: 550px;
+    display: block;
+    background: #FFF7FA;
+    margin-right: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.example-box {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(212, 10, 10, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0, 0);
+}
+
+.example-custom-placeholder {
+    background: #ccc;
+    border: dotted 3px #999;
+    min-height: 60px;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    color: #75736f;
+}
+
+a:focus,
+a:hover,
+a:visited,
+a:active,
+a:link {
+    text-decoration: none !important;
+}
+
+ul.neo-nav {
+    display: inline-block;
+    -moz-padding-start: 0px;
+    -webkit-padding-start: 0px;
+    border-radius: 4px;
+    border: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+ul.neo-nav li {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: inline-block;
+    list-style: none;
+}
+
+ul.neo-nav li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+}
+
+ul.neo-nav li.active a {
+    color: rgb(230, 14, 14);
+}
+
+ul.neo-nav li:not(:first-child) {
+    border-left: 1px solid rgb(148, 1, 1);
+}
+
+ul.neo-nav li.active {
+    color: white;
+    border-radius: 1px;
+}
+
+ul.neo-nav li a:hover,
+ul.neo-nav li a:visited,
+ul.neo-nav li a:active,
+ul.neo-nav li a:link {
+    text-decoration: none;
+}
+
+#formBuilderContent {
+    background-color: white;
+    padding: 10px;
+}
+
+.dragElement-wrapper {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.dragElement-wrapper .drag-element {
+    display: block;
+    width: 90%;
+    border: 1px solid rgb(148, 1, 1);
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 2px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mat-card {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dragElement-wrapper .drag-element i {
+    margin-right: 7px;
+}
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+
+#chkBoxZone {
+    margin-top: 5px;
+}
+
+.input-as-label {
+    border: none;
+    box-shadow: none;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 1px;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.active-field {
+    background-color: #f1fafc;
+}
+
+.form-group {
+    padding: 5px;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 90%;
+    border: 1px;
+}
+
+.form-group i.remove-ico {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    cursor: pointer;
+}
+
+.pale {
+    opacity: 40%;
+}
+
+.sortable-formbuilder,
+.sortable-stdFields {
+    -moz-padding-start: 0px;
+    -webkit-padding-start: 0px;
+    -khtml-padding-start: 0px;
+    -o-padding-start: 0px;
+    list-style: none;
+    min-height: 100px;
+    padding: 15px;
+    position: fixe;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.ng-invalid.ngtouched {
+    border-color: red;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    min-height: 100vh;
+    background: #e2e2e2;
+}
+
+.app-header {
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.login-wrapper {
+    height: 100%;
+}
+
+.box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 60px 50px 40px 50px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 330px;
+}
+
+.box.back {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: -1;
+}
+
+.box:before {
+    content: "";
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    background: rgba(255, 255, 255, 0.6);
+    left: 0;
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    z-index: -1;
+}
+
+.login-wrapper .example-form {
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login-wrapper .example-full-width,
+.login-wrapper .btn-block {
+    width: 100%;
+}
+
+.login-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+}
+
+.login-wrapper mat-card-header mat-card-title {
+    font-size: 30px;
+    margin: 0;
+}
+
+.login-wrapper .mat-card {
+    padding: 40px 70px 50px;
+}
+
+.login-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    background: #FFF7FA;
+}
+
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+}
+
+.mat-list-item {
+    background-color: rgb(64, 159, 190);
+}
+
+.mat-menu-item {
+    background-color: rgb(125, 173, 189);
+}
+
+.alert {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}

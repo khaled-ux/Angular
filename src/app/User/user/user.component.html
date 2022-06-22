@@ -1,0 +1,56 @@
+<div class="card" style="width: 60rem;" style="margin-top:30" style="margin-bottom:30">
+    <div class="card-body" style="width: 60rem;" style="margin-top:30" style="margin-bottom:30">
+        <div class="jumbotron py-2">
+            <div class="example-flex-container">
+                <div class="example-button-container">
+                    <a mat-button mat-raised-button mat-button color="primary" routerLink="/board-admin">Retour</a>
+                </div>
+                <div class="example-button-container">
+                    <a mat-button mat-raised-button mat-button color="primary" routerLink="addUser">Ajouter</a>
+                </div>
+
+            </div>
+            <h1 class="display-4 text-center">Gestion du Utilisateurs</h1>
+
+            <div class="row" style="width: 60rem;" style="margin-top:30" style="margin-bottom:10">
+                <app-member-form></app-member-form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <!-- <th>ID</th> -->
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+
+                            <th>Action</th>
+                            <th>Action</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of Users">
+                            <!-- <td> {{user.id}}</td> -->
+                            <td> {{user.firstName}}</td>
+                            <td> {{user.lastName}}</td>
+                            <td> {{user.email}}</td>
+                            <td>
+                                <div class=" example-button-container ">
+                                    <button mat-icon-button color="primary" (click)="onUpdate(user.id)">
+                                      <mat-icon>edit</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class=" example-button-container ">
+                                    <button mat-icon-button color="warn">
+                                      <mat-icon (click)="onDelete(user.id)">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

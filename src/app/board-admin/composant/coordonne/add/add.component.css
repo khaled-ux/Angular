@@ -1,0 +1,7 @@
+.ng-invalid.ngtouched {
+    border-color: red;
+}
+
+.login-wrapper {
+    background-image: url("https://images.hdqwalls.com/download/material-design-colors-8k-2q-1920x1080.jpg");
+}

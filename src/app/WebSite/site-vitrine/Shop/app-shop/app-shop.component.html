@@ -1,0 +1,146 @@
+<div class="scroll-list">
+    <div class="row">
+
+        <div class="example-list">
+
+            <div class="row sortable-formbuilder " *ngFor="let item of items">
+                <div class="example-custom-placeholder"></div>
+                <div class="form-group">
+
+                    <!--  text -->
+                    <div class="container" *ngIf="item.inputType==='text' ">
+                        <div class="heading_container heading_center psudo_white_primary mb_45">
+                            <h2>
+                                {{item.placeholder}}
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <!--  date -->
+                    <div class="container" *ngIf="item.inputType==='date' ">
+                        <div class="heading_container heading_center psudo_white_primary mb_45">
+                            <h2>
+                                {{item.placeholder}}
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+
+                    <!--   Produit -->
+                    <!-- <div class="col-md-6 " *ngIf="item.inputType==='Produit' ">
+                        <div>
+                            <div class="img-box ">
+                                <img [src]="item.pathImage" style="width: 250px; height:200px;">
+
+                                <p>{{item.nameProduit}}</p>
+                                <p>{{item.prixProduit}}</p>
+
+
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+                    <section class="about_section layout_padding" *ngIf="item.inputType==='Produit' ">
+                        <div class="container  ">
+
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="img-box">
+                                        <img src="item.pathImage">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <div class="heading_container">
+                                            <h2>
+                                                {{item.nameProduit}}
+                                            </h2>
+                                        </div>
+
+                                        <a>
+                                            <p>{{item.prixProduit}}</p>
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <!--  Pagaraph  -->
+                    <div class="container" *ngIf="item.inputType==='textarea' ">
+                        <div class="heading_container heading_center psudo_white_primary mb_45">
+                            <p>
+                                {{item.placeholder}}
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!--  Carte -->
+                    <div class="detail-box " *ngIf="item.inputType==='iframe' ">
+                        <div>
+                            <div class="map_container ">
+                                <iframe class="form-control " allowtransparency="true " frameborder="0 " scrolling="no " style="width: 100%; height: 250px; margin-top: 10px; margin-bottom: 10px; " src="//www.weebly.com/weebly/apps/generateMap.php?map=google&amp;elementid=161117021954268281&amp;ineditor=1&amp;control=3&amp;width=auto&amp;height=250px&amp;overviewmap=0&amp;scalecontrol=0&amp;typecontrol=0&amp;zoom=15&amp;long=-122.418333&amp;lat=37.775&amp;domain=www&amp;point=1&amp;align=1&amp;reseller=false&amp;touch=0 "></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--  Formulaire -->
+                    <div *ngIf="item.inputType==='form' " class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+                        <mat-card class="box">
+                            <form #f="ngForm" class="example-form">
+                                <mat-card-content>
+                                    <mat-form-field class="example-full-width">
+                                        <input required minlength="6" matInput placeholder="Firstname " name="Firstname">
+
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input required minlength="6" matInput placeholder="Lastname" name="Lastname">
+
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input required minlength="6" matInput placeholder="Username" name="Username">
+
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input required Email minlength="6" matInput placeholder="Email" name="Email">
+
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input required minlength="6" matInput placeholder="Password" name="Password">
+
+                                    </mat-form-field>
+
+                                </mat-card-content>
+                                <button [disabled]="f.invalid" mat-stroked-button color="accent" class="btn-block">envoyer message</button>
+
+                            </form>
+                        </mat-card>
+                    </div>
+
+
+                    <div class="heading_container heading_center psudo_white_primary mb_45">
+                        <h2>
+                            <div class="container" *ngIf="item.inputType==='editor' " [innerHTML]="item.htmlContent"></div>
+                        </h2>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

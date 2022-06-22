@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+}
+
+.mat-list-item {
+    background-color: rgb(64, 159, 190);
+}
+
+.mat-menu-item {
+    background-color: rgb(125, 173, 189);
+}

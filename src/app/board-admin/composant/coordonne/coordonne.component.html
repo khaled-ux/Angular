@@ -1,0 +1,63 @@
+<div class="card" style="width: 60rem;" style="margin-top:30" style="margin-bottom:30" style="margin-left:40" style="margin-right:30">
+    <div class="card-body" style="width: 60rem;" style="margin-top:30" style="margin-bottom:30">
+        <div>
+            <div class="jumbotron py-2">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <a mat-button mat-raised-button mat-button color="primary" routerLink="/board-admin">Retour</a>
+                    </div>
+                    <div class="example-button-container">
+                        <a mat-button mat-raised-button mat-button color="primary" routerLink="add">Ajouter</a>
+                    </div>
+
+                </div>
+                <h1 class="display-4 text-center">Les Coordonnes</h1>
+
+                <div class="row" style="width: 60rem;" style="margin-top:30" style="margin-bottom:10">
+                    <app-member-form></app-member-form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th> ID</th>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Adresse</th>
+                                <th>Telephone</th>
+                                <th></th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let coordonne of   Coordonnes">
+                                <td> {{coordonne.id}}</td>
+                                <td> {{coordonne.nom}}</td>
+                                <td> {{coordonne.email}}</td>
+                                <td> {{coordonne.adresse}}</td>
+                                <td> {{coordonne.telephone}}</td>
+                                <td>
+                                    <div class=" example-button-container ">
+                                        <button mat-icon-button color="primary" (click)="onUpdate(coordonne.id)">
+                                          <mat-icon>edit</mat-icon>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" example-button-container ">
+                                        <button mat-icon-button color="warn" (click)="onDelete(coordonne.id)">
+                                          <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <td>
+                        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+                        </mat-paginator>
+                    </td>
+                </div>
+            </div>
+        </div>

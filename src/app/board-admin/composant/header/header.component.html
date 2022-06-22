@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+
+
+    <button *ngIf="isrole" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+          </button>
+    <div><a target="_blank" class="positronx">Sofia Technologies </a></div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a mat-button mat-raised-button mat-button color="primary" routerLink="/profile">Mon  Profile</a>
+
+            </li>
+            <li>
+                <a mat-button mat-raised-button mat-button color="primary" routerLinkActive="active" routerLink="/tarifs">Tarifs</a>
+            </li>
+            <li>
+                <a mat-button mat-raised-button mat-button color="primary" routerLinkActive="active" (click)="logout()">DÉCONNEXION</a>
+            </li>
+
+        </ul>
+    </div>
+</mat-toolbar>

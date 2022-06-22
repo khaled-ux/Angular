@@ -1,0 +1,181 @@
+<div class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a class="logo"><em>{{nom}}</em></a>
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a class="active">Home</a></li>
+                        <li class="scroll-to-section"><a>About</a></li>
+                        <li class="scroll-to-section"><a>Classes</a></li>
+                        <li class="scroll-to-section"><a>Schedules</a></li>
+                        <li class="scroll-to-section"><a>Contact</a></li>
+                        <li class="main-button" (click)="logout()"><a>Sign Up</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-banner" id="top">
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/images/gym-video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay header-text">
+
+        <div class="caption">
+            <h6>work harder, get stronger</h6>
+            <h2>easy with our <em>gym</em></h2>
+            <div class="main-button scroll-to-section">
+                <a>Become a member</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section" id="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <h2>Don’t <em>think</em>, begin <em>today</em>!</h2>
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                            <div class="detail-box">
+
+                                <p>
+                                    {{description}}
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="book_section layout_padding">
+    <app-body></app-body>
+</section>
+
+
+
+
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div id="map">
+                    <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="contact-form">
+                    <form id="contact" action="" method="post">
+                        <form #sendemail="ngForm" (ngSubmit)="sendEmail(sendemail)">
+                            <div>
+                                <input [(ngModel)]="Name" name="Name" type="text " class="form-control" placeholder="Name" />
+                            </div>
+                            <div>
+                                <input [(ngModel)]="Email" name="Email" type="email" class="form-control" placeholder="Email" />
+                            </div>
+                            <div>
+                                <input [(ngModel)]="Subject" name="Subject" type="text" class="form-control" placeholder="Subject" />
+                            </div>
+                            <div>
+                                <input [(ngModel)]="Body" name="Body" type="text" class="form-control" placeholder="your Message" />
+                            </div>
+
+                            <div class="btn_box ">
+                                <button>
+                                Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer_section ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-4 footer-col ">
+                <div class="footer_contact ">
+                    <h4>
+                        Contact Us
+                    </h4>
+                    <div class="contact_link_box ">
+                        <a>
+                            <i class="fa fa-map-marker " aria-hidden="true "></i>
+                            <span>
+                          {{adresse}}
+                    </span>
+                        </a>
+                        <a>
+                            <i class="fa fa-phone " aria-hidden="true "></i>
+                            <span>
+                                  {{telephone}}
+                    </span>
+                        </a>
+                        <a>
+                            <i class="fa fa-envelope " aria-hidden="true "></i>
+                            <span>
+                    {{email}}
+                    </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col ">
+                <div class="footer_detail ">
+                    <a class="footer-logo ">
+                {{nom}}
+                </a>
+                    <p>
+                        {{description}}
+                    </p>
+                    <div class="footer_social ">
+                        <a href="https://www.facebook.com/{{lienFacebook}} ">
+                            <i class="fa fa-facebook " aria-hidden="true "></i>
+                        </a>
+
+                        <a href="https://fr.linkedin.com/{{lienLinkedin}} ">
+                            <i class="fa fa-linkedin " aria-hidden="true "></i>
+                        </a>
+                        <a href="https://www.instagram.com/{{lienInstagram}} ">
+                            <i class="fa fa-instagram " aria-hidden="true "></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col ">
+                <h4>
+                    Opening Hours
+                </h4>
+                <p>
+                    {{dateOuverture}}
+                </p>
+
+            </div>
+        </div>
+        <div class="footer-info ">
+            <p>
+                &copy; <span id="displayYear "></span> All Rights Reserved By
+                <a>Sofia Technologies </a><br><br> &copy; <span id="displayYear "></span> Distributed By
+                <a href=" " target=" _blank ">Sofia Technologies</a>
+            </p>
+        </div>
+    </div>
+</footer>

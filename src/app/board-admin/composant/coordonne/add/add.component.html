@@ -1,0 +1,30 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Ajouter Vos Coordonnes</mat-card-title>
+        </mat-card-header>
+        <form #f="ngForm" class="example-form" (ngSubmit)="save(f)">
+            <mat-card-content>
+
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="Nom" #in="ngModel" required matInput placeholder="Nom" name="Nom">
+                    <div *ngIf="in.invalid && in.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="Email" #i="ngModel" required matInput placeholder="Email" name="Email">
+                    <div *ngIf="i.invalid && in.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="Adresse" #a="ngModel" required matInput placeholder="Adresse" name="Adresse">
+                    <div *ngIf="a.invalid && in.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="Telephone" #b="ngModel" required matInput placeholder="Telephone" name="Telephone">
+                    <div *ngIf="b.invalid && in.touched" class="alert alert-danger"> </div>
+                </mat-form-field>
+            </mat-card-content>
+            <button [disabled]="f.invalid" mat-stroked-button color="accent" class="btn-block">Enregistrer</button>
+            <button mat-stroked-button color="accent" class="btn-block" type="submit" routerLink="/coordonne">Retour</button>
+        </form>
+    </mat-card>
+</div>
